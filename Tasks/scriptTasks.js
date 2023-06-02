@@ -318,6 +318,57 @@ function secondTask() {
 }
 console.log(secondTask());
 
+// Coding Exercise 5: (**) Задача на формирование фигуры
+// ===============================================================================================
+
+// необходимо написать код, который при помощи звездочек (*) в консоли нарисует вот такую фигуру:
+
+//      *
+//     ***
+//    *****
+//   *******
+//  *********
+// ***********
+// (Подсказка: в конце фигуры есть перенос строки \n, который тоже учитывается в тестах. В КОНЦЕ КАЖДОЙ
+//   СТРОКИ НЕТ ПРОБЕЛОВ, ТОЛЬКО ПЕРЕНОС)
+
+let result = ``;
+const length = 50;
+const space = ` `;
+const star = `*`;
+
+for (let i = 1; i < length; i++) {
+  for (let k = length; k > i; k--) {
+    result += space;
+  }
+  for (let j = 1; j < i + i; j++) {
+    result += star;
+  }
+
+  result += `\n`;
+}
+
+console.log(result);
+
+// Решение
+
+const lines = 5;
+let result = '';
+
+for (let i = 0; i <= lines; i++) {
+    for (let j = 0; j < lines - i; j++) {
+        result += " ";
+    }
+    for (let j = 0; j < 2 * i + 1; j++) {
+        result += "*";
+    }
+    result += "\n";
+}
+
+console.log(result)
+
+
+// ===============================================================================================
 
 
 
@@ -862,7 +913,7 @@ function availableCurr(arr, missingCurr) {
 availableCurr([...baseCurrencies, ...additionalCurrencies], "CNY");
 
 // Coding Exercise 13: (*) Продвинутая задача на работу с объектами и массивами
-// ---------------------------------------------Н Е  В Ы П  О Л Н Е Н А!!!!!!!!!!!!!!!!!!!!
+// ================================================================================================
 // №1
 // У вас есть небольшой кусочек данных о торговом центре, которые записаны в объекте
 // shoppingMallData. Они содержат массив с данными о магазинах, где указана длина и
@@ -885,20 +936,20 @@ availableCurr([...baseCurrencies, ...additionalCurrencies], "CNY");
 const shoppingMallData = {
   shops: [
     {
-      width: 10,
-      length: 5,
+      wid: 10,
+      leng: 5,
     },
     {
-      width: 15,
-      length: 7,
+      wid: 15,
+      leng: 7,
     },
     {
-      width: 20,
-      length: 5,
+      wid: 20,
+      leng: 5,
     },
     {
-      width: 8,
-      length: 10,
+      wid: 8,
+      leng: 10,
     },
   ],
   height: 5,
@@ -906,7 +957,27 @@ const shoppingMallData = {
   budget: 50000,
 };
 
-function isBudgetEnough(data) {}
+
+function isBudgetEnough(data) {
+  let ttlSq = 0;
+  let ttlBudget = 0;
+
+  data.shops.forEach(shops => {
+    ttlSq += shops.wid * shops.leng;
+  });
+
+
+  ttlBudget = ttlSq * data.moneyPer1m3*data.height
+  
+  if(ttlBudget>=data.budget){
+return `Бюджета достаточно. Общая площадь: ${ttlSq}, бюджет: ${ttlBudget}.`;
+
+  }else{
+    return `Бюджета недостаточно Общая площадь: ${ttlSq}, бюджет: ${ttlBudget}.`;
+  } 
+}
+
+console.log(isBudgetEnough(shoppingMallData));
 
 // Coding Exercise 14: (*) Продвинутая задача на работу с объектами и массивами
 // ---------------------------------------------Н Е  В Ы П  О Л Н Е Н А!!!!!!!!!!!!!!!!!!!!

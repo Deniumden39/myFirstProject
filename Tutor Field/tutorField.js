@@ -27,3 +27,6 @@ john.sayHello();
 
 // [Running] node "c:\Users\PAVILION\Documents\TUTOR\JavaScript\Tutor Field\tempCodeRunnerFile.js"
 // Hello!
+
+// 37. Практика , ч4. Используем объекты
+// =============================================================

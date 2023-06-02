@@ -170,11 +170,12 @@ const personalMovieDB = {
         console.log("Вы ввели некорректные данные");
         i--;
       } else {
-        personalMovieDB.genres = genres.split(", ");
-        personalMovieDB.genres.sort();
+        personalMovieDB.genres = genres.split; // ????????????????
+        personalMovieDB.genres.sort;
       }
     }
     personalMovieDB.genres.forEach((item, i) => {
+      //callback function
       console.log(`Любимый жанр #${i + 1} - это ${item}`);
     });
   },
