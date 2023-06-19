@@ -97,10 +97,6 @@ P.S. Функции вызывать не обязательно*/
 
 "use strict";
 
-// Код возьмите из предыдущего домашнего задания
-
-"use strict";
-
 const personalMovieDB = {
   count: 0,
   movies: {},
@@ -171,10 +167,11 @@ const personalMovieDB = {
         i--;
       } else {
         personalMovieDB.genres = genres.split; // ????????????????
-        personalMovieDB.genres.sort;
+        // personalMovieDB.genres.sort();
       }
     }
     personalMovieDB.genres.forEach((item, i) => {
+      // ????????????????
       //callback function
       console.log(`Любимый жанр #${i + 1} - это ${item}`);
     });

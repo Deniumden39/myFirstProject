@@ -1,32 +1,59 @@
-`use strict`;
+"use strict";
+// Динамическая типизация в JS
 
-// 36. Основы ООП, прототипно-ориентированное наследование
-// ------------------------------------------------------
+// to string
 
-// let str = "some";
-// let strObj = new String(str);
+// 1)
 
-// console.log(typeof str);
-// console.log(typeof strObj);
+console.log(typeof String(null)); //string
 
-console.dir([1, 2, 3]);
+// 2) Конкатенация
 
-const soldier = {
-  health: 400,
-  armor: 100,
-  sayHello: function () {
-    console.log("Hello!");
-  },
-};
-// const john={
-//   health:100
-// };
-// Object.setPrototypeOf(john, soldier);
-const john = Object.create(soldier);
-john.sayHello();
+console.log(typeof (5 + " ")); //string
 
-// [Running] node "c:\Users\PAVILION\Documents\TUTOR\JavaScript\Tutor Field\tempCodeRunnerFile.js"
-// Hello!
+const num = 5;
 
-// 37. Практика , ч4. Используем объекты
-// =============================================================
+console.log("https//vk.com/catalog/" + num);
+
+const fontSize = 26 + "px";
+
+// to number
+
+// 1)
+
+console.log(typeof Number("4")); //number
+
+// 2) унарный +
+
+console.log(typeof +"4"); //number
+
+// 3)
+
+console.log(typeof parseInt("15px", 10)); //number
+
+let answ = +prompt("Hellow", "");
+
+// to boolean
+
+// 1)
+0, "", null, underind, NaN;
+-false;
+
+let switcher = null;
+
+if (switcher) {
+  console.log("Working");
+}
+
+switcher = 1;
+if (switcher) {
+  console.log("Working");
+}
+
+// 2)
+
+console.log(typeof Boolean("4")); //boolean
+
+// 3)
+
+console.log(typeof !!"4444"); //boolean

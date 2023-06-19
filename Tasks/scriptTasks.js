@@ -37,7 +37,7 @@ first: for (let i = 0; i < 3; i++) {
   }
 }
 
-Что выведет в консоль код?
+// Что выведет в консоль код?
 
 
 
@@ -84,10 +84,10 @@ if (hamburger === 3 && cola || fries === 3 && nuggets) {
 
 // Выполняется ли условие?
 
-let hamburger;
-const fries = NaN;
-const cola = 0;
-const nuggets = 2;
+// let hamburger;
+// const fries = NaN;
+// const cola = 0;
+// const nuggets = 2;
 
 
 if (hamburger || cola || fries === 3 || nuggets) {
@@ -980,7 +980,7 @@ return `Бюджета достаточно. Общая площадь: ${ttlSq}
 console.log(isBudgetEnough(shoppingMallData));
 
 // Coding Exercise 14: (*) Продвинутая задача на работу с объектами и массивами
-// ---------------------------------------------Н Е  В Ы П  О Л Н Е Н А!!!!!!!!!!!!!!!!!!!!
+
 // №2
 // У вас есть список учеников, которые хотят поиграть в игру:
 
@@ -1032,10 +1032,10 @@ const students = [
   "Takesi",
   "Sam",
 ];
+let teamSize = 4;
 
-function sortStudentsByGroups(arr) {
+function sortStudentsByGroups(arr, size) {
   sortAlphStudents = students.sort();
-  let size = 3; //размер подмассива
   let studentsGroup = []; //массив в который будет выведен результат.
   for (let i = 0; i < Math.ceil(sortAlphStudents.length / size); i++) {
     studentsGroup[i] = sortAlphStudents.slice(i * size, i * size + size);
@@ -1050,7 +1050,7 @@ function sortStudentsByGroups(arr) {
   }
   console.log(studentsGroup);
 }
-sortStudentsByGroups(students);
+sortStudentsByGroups(students, teamSize);
 
 // Решение
 function sortStudentsByGroups(arr) {
@@ -1080,3 +1080,5 @@ function sortStudentsByGroups(arr) {
 }
 
 sortStudentsByGroups(students);
+
+
