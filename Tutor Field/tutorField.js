@@ -1,59 +1,55 @@
 "use strict";
-// Динамическая типизация в JS
+// 40. Замыкание и лексическое окружение
 
-// to string
+// let num = 5;
+// debugger;
 
-// 1)
+// function logNumber() {
+//   console.log(num);
+//   debugger;
+// }
 
-console.log(typeof String(null)); //string
+// num = 6;
 
-// 2) Конкатенация
+// logNumber();
+// debugger;
 
-console.log(typeof (5 + " ")); //string
+// num = 8;
 
-const num = 5;
+// logNumber();
+// debugger;
 
-console.log("https//vk.com/catalog/" + num);
+// =============== Counter
 
-const fontSize = 26 + "px";
+function createCounter() {
+  let counter = 0;
 
-// to number
-
-// 1)
-
-console.log(typeof Number("4")); //number
-
-// 2) унарный +
-
-console.log(typeof +"4"); //number
-
-// 3)
-
-console.log(typeof parseInt("15px", 10)); //number
-
-let answ = +prompt("Hellow", "");
-
-// to boolean
-
-// 1)
-0, "", null, underind, NaN;
--false;
-
-let switcher = null;
-
-if (switcher) {
-  console.log("Working");
+  const myFunction = function () {
+    debugger;
+    counter = counter + 1;
+    debugger;
+    return counter;
+    debugger;
+  };
+  return myFunction;
 }
+debugger;
+const increment = createCounter();
+debugger;
+const c1 = increment();
+debugger;
+const c2 = increment();
+debugger;
+const c3 = increment();
+debugger;
 
-switcher = 1;
-if (switcher) {
-  console.log("Working");
+console.log(c1, c2, c3);
+
+// Цикл в цикле
+// ===================================================
+for (let i = 0; i < 9; i++) {
+  for (let j = 0; j < 9; j++) {
+    let num = 3;
+  }
+  console.log(num); //почему код выдает ошибку? Потому что num существует только внутри цикла j
 }
-
-// 2)
-
-console.log(typeof Boolean("4")); //boolean
-
-// 3)
-
-console.log(typeof !!"4444"); //boolean
