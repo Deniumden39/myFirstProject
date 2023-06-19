@@ -1,23 +1,23 @@
 "use strict";
 // 40. Замыкание и лексическое окружение
 
-// let num = 5;
-// debugger;
+let num = 5;
+debugger;
 
-// function logNumber() {
-//   console.log(num);
-//   debugger;
-// }
+function logNumber() {
+  console.log(num);
+  debugger;
+}
 
-// num = 6;
+num = 6;
 
-// logNumber();
-// debugger;
+logNumber();
+debugger;
 
-// num = 8;
+num = 8;
 
-// logNumber();
-// debugger;
+logNumber();
+debugger;
 
 // =============== Counter
 
