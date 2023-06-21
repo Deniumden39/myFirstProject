@@ -1,55 +1,66 @@
 "use strict";
-// 40. Замыкание и лексическое окружение
+// 41. Задачи с собеседований на понимание основ
 
-let num = 5;
-debugger;
+// №1 •	Какое будет выведено значение: let x = 5; alert( x++ ); ?
+let x = 5;
+alert(x++); //5  постфикс
+alert(++x); //6 префикс
 
-function logNumber() {
-  console.log(num);
-  debugger;
-}
+// №2 •	Чему равно такое выражение: [ ] + false - null + true ?
+[] + false - null + true;
 
-num = 6;
+console.log([] + false); //false
+console.log([] + false - null); // NaN
+console.log([] + false - null + true); // NaN
 
-logNumber();
-debugger;
+// #3 •	Что выведет этот код: let y = 1; let x = y = 2; alert(x); ?
 
-num = 8;
+let y = 1;
+let x = (y = 2);
+alert(x);
 
-logNumber();
-debugger;
+let y = 1;
+let x = (y = 2);
+alert(x); //2
 
-// =============== Counter
+// #4 •	Чему равна сумма [ ] + 1 + 2?
 
-function createCounter() {
-  let counter = 0;
+[] + 1 + 2;
 
-  const myFunction = function () {
-    debugger;
-    counter = counter + 1;
-    debugger;
-    return counter;
-    debugger;
-  };
-  return myFunction;
-}
-debugger;
-const increment = createCounter();
-debugger;
-const c1 = increment();
-debugger;
-const c2 = increment();
-debugger;
-const c3 = increment();
-debugger;
+console.log([] + 1 + 2); //12
 
-console.log(c1, c2, c3);
+// #5 •	Что выведет этот код: alert( "1"[0] )?
 
-// Цикл в цикле
-// ===================================================
-for (let i = 0; i < 9; i++) {
-  for (let j = 0; j < 9; j++) {
-    let num = 3;
-  }
-  console.log(num); //почему код выдает ошибку? Потому что num существует только внутри цикла j
-}
+alert("1"[0]); // 1 ; [0]- индекс строки
+
+// #6 •	Чему равно 2 && 1 && null && 0 && undefined ?
+
+console.log(2 && 1 && null && 0 && undefined); //null;  && запинается на лжи
+
+// #6 •	Есть ли разница между выражениями? !!( a && b ) и (a && b)?
+
+console.log(!!(1 && 2) === (1 && 2)); //false; !!- превратило выражение в булиновое значение
+
+// №7 •	Что выведет этот код: alert( null || 2 && 3 || 4 ); ?
+
+alert(null || (2 && 3) || 4); // &&->3, ||->3, ||->3; || запинается на правде
+
+// #7 •	a = [1, 2, 3]; b = [1, 2, 3]; Правда ли что a == b ?
+
+a = [1, 2, 3];
+b = [1, 2, 3];
+const a = [1, 2, 3];
+const b = [1, 2, 3];
+
+console.log(a == b); //false тк массивы разные, даже если содержание одинаковое
+
+// №8 •	Что выведет этот код: alert( +"Infinity" ); ?
+
+alert(+"Infinity"); // Infinity
+
+// #9 •	Верно ли сравнение: "Ёжик" > "яблоко"?
+
+console.log("Ёжик" > "яблоко"); // false тк происходит посимвольное сравнение Ё> я, ж > б ... по UNICODE
+
+// #10 • Чему равно 0 || "" || 2 || undefined || true || falsе ?
+console.log(0 || "" || 2 || undefined || true || falsе); //2   || запинается на правде
